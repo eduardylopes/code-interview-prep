@@ -27,7 +27,7 @@ function updateInventory(arr1, arr2) {
     }
   }
 
-  return arr1;
+  return arr1.sort((a, b) => a[1].localeCompare(b[1]));
 }
 
 const result = updateInventory(curInv, newInv);
