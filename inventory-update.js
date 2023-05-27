@@ -1,3 +1,11 @@
+/*
+  Compare and update the inventory stored in a 2D array against 
+  a second 2D array of a fresh delivery. Update the current existing 
+  inventory item quantities (in arr1). If an item cannot be found, 
+  add the new item and quantity into the inventory array. 
+  The returned inventory array should be in alphabetical order by item.
+*/
+
 const curInv = [
   [21, 'Bowling Ball'],
   [2, 'Dirty Sock'],
@@ -15,8 +23,8 @@ const newInv = [
 function updateInventory(arr1, arr2) {
   const arr1Mapped = arr1.map(it => it[1]);
 
-  for (let i = 0; i < arr2.length; i++) {
-    const [quantity, name] = arr2[i];
+  for (const item of arr2) {
+    const [quantity, name] = item;
 
     const itemIndex = arr1Mapped.indexOf(name);
 
